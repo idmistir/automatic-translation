@@ -88,6 +88,19 @@
                     <backend_model>MageOS\AutomaticTranslation\Model\Config\SelectAttributeCron</backend_model>
                     <comment>Use Unix crontab syntax (ex. */15 * * * * -> every 15 minutes)</comment>
                 </field>
+
+                <field id="translate_category_disabled" translate="label comment" type="select" sortOrder="55" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Translate disabled categories</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>This option is not considered in the translation button in category editing. It is used only for periodic automatic translation.</comment>
+                </field>
+                <field id="enable_category_periodic_retranslation" translate="label comment" sortOrder="60" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable periodic retranslation (category)</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If set to "yes," categories will be periodically retranslated, even if they are flagged as "already translated."
+                        Warning: this setting may overwrite any manual changes to the category translations.
+                    </comment>
+                </field>
             </group>
             <group id="translations_engine" translate="label" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
                 <label>Translation engine</label>

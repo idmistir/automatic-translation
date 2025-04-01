@@ -7,6 +7,13 @@
             <config_path>crontab/translate_products/jobs/mageos_translate_products/schedule/cron_expr</config_path>
         </job>
     </group>
+    <group id="translate_categories">
+        <job name="mageos_translate_categories"
+             instance="MageOS\AutomaticTranslation\Cron\TranslateCategories"
+             method="execute">
+            <config_path>crontab/translate_categories/jobs/mageos_translate_products/schedule/cron_expr</config_path>
+        </job>
+    </group>
     <group id="translate_select_attributes">
         <job name="mageos_translate_select_attributes"
              instance="MageOS\AutomaticTranslation\Cron\TranslateSelectAttributes"

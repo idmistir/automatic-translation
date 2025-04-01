@@ -5,6 +5,8 @@
     <preference for="MageOS\AutomaticTranslation\Api\ProductTranslatorInterface" type="MageOS\AutomaticTranslation\Service\ProductTranslator"/>
     <preference for="MageOS\AutomaticTranslation\Api\TranslateProductsInterface" type="MageOS\AutomaticTranslation\Service\TranslateProducts"/>
     <preference for="MageOS\AutomaticTranslation\Api\TranslateSelectAttributesInterface" type="MageOS\AutomaticTranslation\Service\TranslateSelectAttributes"/>
+    <preference for="MageOS\AutomaticTranslation\Api\CategoryTranslatorInterface" type="MageOS\AutomaticTranslation\Service\CategoryTranslator"/>
+    <preference for="MageOS\AutomaticTranslation\Api\TranslateCategoriesInterface" type="MageOS\AutomaticTranslation\Service\TranslateCategories"/>
 
     <!-- CRON VIRTUAL TYPE -->
     <virtualType name="MageOS\AutomaticTranslation\Model\Config\SelectAttributeCron" type="MageOS\AutomaticTranslation\Model\Config\CatalogCron">

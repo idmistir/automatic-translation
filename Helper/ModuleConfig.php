@@ -28,6 +28,9 @@ class ModuleConfig extends AbstractHelper
     const TRANSLATE_DISABLED = self::CATALOG_GROUP . 'translate_disabled';
     const ENABLE_URL_REWRITE = self::CATALOG_GROUP . 'enable_url_rewrite';
 
+    const CATEGORY_TRANSLATE_DISABLED = self::CATALOG_GROUP . 'translate_category_disabled';
+    const CATEGORY_ENABLE_PERIODIC = self::CATALOG_GROUP . '/enable_category_periodic_retranslation';
+
     const ENGINE = self::ENGINE_GROUP . '/engine';
     const DEEPL_AUTH_KEY = self::ENGINE_GROUP . '/deepl_auth_key';
     const OPEN_AI_ORG_ID = self::ENGINE_GROUP . '/openai_org_id';
@@ -97,9 +100,27 @@ class ModuleConfig extends AbstractHelper
      * @param int $storeId
      * @return bool
      */
+    public function isEnablePeriodicRetranslationCategory(int $storeId = 0): bool
+    {
+        return (bool)$this->scopeConfig->isSetFlag(self::CATEGORY_ENABLE_PERIODIC, ScopeInterface::SCOPE_STORE, $storeId);
+    }
+
+    /**
+     * @param int $storeId
+     * @return bool
+     */
     public function translateDisabledProducts(int $storeId = 0): bool
     {
         return (bool)$this->scopeConfig->isSetFlag(self::TRANSLATE_DISABLED, ScopeInterface::SCOPE_STORE, $storeId);
+    }
+
+    /**
+     * @param int $storeId
+     * @return bool
+     */
+    public function translateDisabledCategories(int $storeId = 0): bool
+    {
+        return (bool)$this->scopeConfig->isSetFlag(self::CATEGORY_TRANSLATE_DISABLED, ScopeInterface::SCOPE_STORE, $storeId);
     }
 
     /**
