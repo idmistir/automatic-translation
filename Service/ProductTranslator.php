@@ -160,6 +160,10 @@ class ProductTranslator implements ProductTranslatorInterface
                     try {
                         $parsedContent = $this->serviceHelper->parsePageBuilderHtmlBox($textToTranslate);
 
+                        $this->logger->debug('Product sku: ' . $product->getSku());
+                        $this->logger->debug('Store: ' . $storeName . '(id ' . $storeId . ')');
+                        $this->logger->debug('Attribute: ' . $attributeCode);
+
                         if (is_string($parsedContent)) {
                             $textTranslated = $this->translator->translate(
                                 $textToTranslate,
@@ -186,6 +190,8 @@ class ProductTranslator implements ProductTranslatorInterface
                             $textTranslated = $this->serviceHelper->encodePageBuilderHtmlBox($textTranslated);
                         }
 
+                        $this->logger->debug('ToTranslate: ' . $textToTranslate);
+                        $this->logger->debug('Translated: ' . $textTranslated);
                         if ($textToTranslate != $textTranslated) {
                             $product->setData($attributeCode, $textTranslated);
                             $this->productResource->saveAttribute($product, $attributeCode);

@@ -63,7 +63,8 @@ class CategoryTranslator implements CategoryTranslatorInterface
 //        'url_key',
         'meta_title',
         'meta_description',
-        'meta_keywords'
+        'meta_keywords',
+        'short_description4'
     ];
 
     /**
